@@ -117,7 +117,8 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    TetheringConfigOverlay
+    TetheringConfigOverlay\
+    WifiOverlay
 
 # IMS
 PRODUCT_PACKAGES += \
