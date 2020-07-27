@@ -15,7 +15,11 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     libldacBT_dec
-    
+   
+# ImsInit hack
+PRODUCT_PACKAGES += \
+    ImsInit
+
 # Init cripts
 PRODUCT_PACKAGES += \
     init.mt6763.rc \
