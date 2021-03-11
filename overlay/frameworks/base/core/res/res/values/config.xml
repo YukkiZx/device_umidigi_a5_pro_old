@@ -246,6 +246,12 @@
     	L 20, 0
     	Z @dp</string>
 
+    <!-- The list of components which should be automatically disabled for a specific device. -->
+    <string-array name="config_disabledComponents" translatable="false">
+        <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
+        <item>com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService</item>
+    </string-array>
+
     <!-- Whether the display cutout region of the main built-in display should be forced to
          black in software (to avoid aliasing or emulate a cutout that is not physically existent). -->
     <bool name="config_fillMainBuiltInDisplayCutout">true</bool>
