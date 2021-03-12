@@ -6,8 +6,6 @@
 
 DEVICE_PATH := device/umidigi/A5_Pro
 
-BOARD_VENDOR := umidigi
-
 # APEX
 TARGET_FLATTEN_APEX := true
 
@@ -125,3 +123,6 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
+# Inherit vendor partition
+-include vendor/umidigi/A5_Pro-vendor/BoardConfig.mk

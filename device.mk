@@ -96,4 +96,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_TARGET_VNDK_VERSION := 28
 PRODUCT_EXTRA_VNDK_VERSIONS := 28
 
-$(call inherit-product-if-exists, vendor/umidigi/A5_Pro/A5_Pro-vendor.mk)
+# Get non-open-source specific aspects
+$(call inherit-product, vendor/umidigi/A5_Pro/A5_Pro-vendor.mk)
