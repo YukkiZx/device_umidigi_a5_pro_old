@@ -27,6 +27,8 @@ on post-fs
     mount none /dev/null vendor/overlay/DisplayCutoutEmulationDouble/DisplayCutoutEmulationDoubleOverlay.apk bind
     mount none /dev/null vendor/overlay/DisplayCutoutEmulationCorner/DisplayCutoutEmulationCornerOverlay.apk bind
 
+    mount none /system/etc/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind
+
 on fs
     # Override vendor fstab again because things like Magisk will re-bind /vendor
     mount none /system/etc/fstab.mt6763 /vendor/etc/fstab.mt6763 bind
