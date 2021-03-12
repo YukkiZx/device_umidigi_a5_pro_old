@@ -15,6 +15,10 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     libldacBT_dec
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2280
+TARGET_SCREEN_WIDTH := 1080
    
 # ImsInit hack
 PRODUCT_PACKAGES += \
