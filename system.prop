@@ -14,6 +14,11 @@ ro.sys.usb.charging.only=yes
 # temporary enables NAV bar (soft keys)
 qemu.hw.mainkeys=0
 
+# Display
+debug.sf.disable_backpressure=1
+debug.sf.enable_hwc_vds=1
+debug.sf.latch_unsignaled=1
+
 # Camera
 persist.camera.HAL3.enabled=1 \
 persist.camera.eis.enable=1 \
