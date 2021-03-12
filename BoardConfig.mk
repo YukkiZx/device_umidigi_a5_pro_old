@@ -4,13 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# mt6763 platform boardconfig
 DEVICE_PATH := device/umidigi/A5_Pro
 
 BOARD_VENDOR := umidigi
-
-# Assert
-TARGET_OTA_ASSERT_DEVICE := A5_Pro, A5_Pro_EEA, breeze
 
 # APEX
 TARGET_FLATTEN_APEX := true
@@ -37,14 +33,18 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 
-TARGET_USES_64_BIT_BINDER := true
+# Assert
+TARGET_OTA_ASSERT_DEVICE := A5_Pro, A5_Pro_EEA, breeze
+
+# AVB (Android Verified Boot)
+BOARD_AVB_ENABLE := false
 
 # Audio
 USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
-# Avb
-BOARD_AVB_ENABLE := false
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6763
@@ -75,6 +75,9 @@ BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE) --board ""
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
 
+# Mediatek IMS
+TARGET_PROVIDES_MEDIATEK_IMS_STACK := true
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
@@ -89,7 +92,11 @@ BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
-# Workaround for error copying vendor files to recovery ramdisk
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USES_MKE2FS := true
+
+TARGET_COPY_OUT_PRODUCT := system/product
+TARGET_COPY_OUT_SYSTEM_EXT := system/system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 
 TARGET_COPY_OUT_PRODUCT := system/product
@@ -98,6 +105,7 @@ TARGET_COPY_OUT_PRODUCT := system/product
 BOARD_USES_RECOVERY_AS_BOOT := false
 TARGET_NO_RECOVERY := false
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.mt6763
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Releasetools
 TARGET_USES_PREBUILT_VENDOR_SEPOLICY := true

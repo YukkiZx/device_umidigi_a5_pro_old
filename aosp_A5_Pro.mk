@@ -15,10 +15,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
-# Inherit from UMIDIGI A5 Pro device
+# Inherit from A5 Pro device
 $(call inherit-product, device/umidigi/A5_Pro/device.mk)
+$(call inherit-product, device/umidigi/A5_Pro/mtk-hals.mk)
 
 # Inherit some common PixelExperience stuff.
+#TARGET_USES_AOSP_RECOVERY := true
+TARGET_BOOT_ANIMATION_RES := 1080
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
@@ -28,6 +31,7 @@ PRODUCT_BRAND := UMIDIGI
 PRODUCT_MODEL := A5_Pro
 PRODUCT_MANUFACTURER := UMIDIGI
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 2280
-TARGET_SCREEN_WIDTH := 1080
+PRODUCT_GMS_CLIENTID_BASE := android-umidigi
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=A5_Pro \
