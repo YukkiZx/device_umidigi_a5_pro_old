@@ -81,9 +81,9 @@ git clone https://github.com/UMIDIGI-MT6763-Development/vendor_mediatek_ims.git 
 git clone https://github.com/PixelExperience/vendor_mediatek_interfaces.git vendor/mediatek/interfaces
 ```
 
-#### ROM:
+#### Build:
 
-1. Build for A5_Pro
+1. start building for UMIDIGI A5 Pro
 ```
 source build/envsetup.sh
 breakfast A5_Pro
