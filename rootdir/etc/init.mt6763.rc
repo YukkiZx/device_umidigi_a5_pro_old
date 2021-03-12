@@ -2,33 +2,31 @@ on init
     # Override fingerprint
     setprop ro.build.fingerprint ${ro.vendor.build.fingerprint}
 
-on init
     setprop sys.usb.ffs.aio_compat 1
-    setprop persist.adb.nonblocking_ffs 0
-    setprop ro.adb.nonblocking_ffs 0
-    setprop persist.sys.usb.config adb
-
-    # Force disable all VoLTE support -- it requires intensive modification of frameworks
-    # without framework support it creates all sorts of problems. Disable it.
-    setprop persist.vendor.mtk.volte.enable 0
-    setprop persist.vendor.mtk_ct_volte_support 0
 
     # Custom overrides that need to happen right on boot
     # Override vendor fstab
     # We only need it to be overridden before things are mounted
     mount none /system/etc/fstab.mt6763 /vendor/etc/fstab.mt6763 bind
+
+    # Disable vendor overlay
+    mount none /vendor/lost+found /vendor/overlay bind
+    
     mount none /system/etc/fstab.enableswap /vendor/etc/fstab.enableswap bind
 
+on fs
+    mount_all /vendor/etc/fstab.mt6763 --early
+    mount_all /vendor/etc/fstab.mt6763 --late
+
 on post-fs
-    # Disable vendor overlays
-    mount none /dev/null vendor/overlay/framework-res__auto_generated_rro.apk bind
-    mount none /dev/null vendor/overlay/SysuiDarkTheme/SysuiDarkThemeOverlay.apk bind
-    mount none /dev/null vendor/overlay/DisplayCutoutEmulationTall/DisplayCutoutEmulationTallOverlay.apk bind
-    mount none /dev/null vendor/overlay/DisplayCutoutEmulationDouble/DisplayCutoutEmulationDoubleOverlay.apk bind
-    mount none /dev/null vendor/overlay/DisplayCutoutEmulationCorner/DisplayCutoutEmulationCornerOverlay.apk bind
+    # Unmount the overridden fstab because the SELinux label is incorrect
+    # and some MTK daemons can crash because of that
+    # (at post-fs, the fstab has already been used to mount the partitions,
+    #  so it is fine to just revert back)
+    umount /vendor/etc/fstab.mt6763
 
     mount none /system/etc/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind
 
-on fs
-    # Override vendor fstab again because things like Magisk will re-bind /vendor
-    mount none /system/etc/fstab.mt6763 /vendor/etc/fstab.mt6763 bind
+# Disable AOSP RIL if MTK RIL is up
+on property:vendor.ril.mtk=1
+    stop vendor.ril-daemon
