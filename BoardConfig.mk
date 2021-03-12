@@ -106,8 +106,9 @@ TARGET_HAS_FUSEBLK_SEPOLICY_ON_VENDOR := true
 # Treble
 BOARD_VNDK_VERSION := current
 
-# Soong
-PRODUCT_SOONG_NAMESPACES += vendor/umidigi/A5_Pro
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(DEVICE_PATH)
 
 # SELinux
 SELINUX_IGNORE_NEVERALLOWS := true
