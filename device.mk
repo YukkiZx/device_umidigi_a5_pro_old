@@ -23,6 +23,11 @@ PRODUCT_PACKAGES += \
 TARGET_SCREEN_HEIGHT := 2280
 TARGET_SCREEN_WIDTH := 1080
 
+# FM
+PRODUCT_PACKAGES += \
+    FMRadio \
+    libfmjni
+
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport \
