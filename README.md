@@ -70,6 +70,17 @@ repo init -u https://github.com/PixelExperience/manifest -b eleven
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 ```
 
+#### Device configuration
+
+1. Device
+```
+git clone https://github.com/UMIDIGI-MT6763-Development/device_umidigi_a5_pro.git device/umidigi/A5_Pro
+```
+2. Vendor
+```
+git clone https://github.com/UMIDIGI-MT6763-Development/vendor_umidigi_a5_pro.git vendor/umidigi/A5_Pro
+```
+
 #### IMS (For the network to work, you need to clone this):
 
 1. Mediatek-ims
