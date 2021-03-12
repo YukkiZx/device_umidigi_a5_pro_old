@@ -8,8 +8,8 @@
 
 set -e
 
-DEVICE=umidigi
-VENDOR=A5_Pro
+DEVICE=A5_Pro
+VENDOR=umidigi
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
