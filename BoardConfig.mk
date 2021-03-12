@@ -92,6 +92,8 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 # Workaround for error copying vendor files to recovery ramdisk
 TARGET_COPY_OUT_VENDOR := vendor
 
+TARGET_COPY_OUT_PRODUCT := system/product
+
 # Recovery
 BOARD_USES_RECOVERY_AS_BOOT := false
 TARGET_NO_RECOVERY := false
