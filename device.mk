@@ -11,6 +11,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Init cripts
 PRODUCT_PACKAGES += \
     init.mt6763.rc \
+    fstab.enableswap \
     fstab.mt6763
 
 # IDC
