@@ -19,7 +19,7 @@ It was released in April 2019.
 | Camera                  | 16MP + 8MP + 5MP with Dual-LED and AF Triple Rear Camera                                                                       | 
 
 ## Device picture
-<img src="https://raw.githubusercontent.com/Hadenix/Hadenix.github.io/master/images/umidigi-a5-pro/logo.png" width="550" height="529"/>
+<img src="https://raw.githubusercontent.com/Hadenix/Hadenix.github.io/master/images/umidigi-a5-pro/logo.png"/>
 
 ## Building instructions
 
