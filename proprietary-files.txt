@@ -1,3 +1,8 @@
 # Bluetooth (aptX) - from begonia-user 10 QP1A.190711.020 20.11.18 release-keys
 lib64/libaptXHD_encoder.so|01379a17d29c1bbc7f6b0325709940ca8cdd7ab8
 lib64/libaptX_encoder.so|fdbca5626fee8607d90bea2a6903eeebf396a7cf
+
+# Kernel Power Off Charging (KPOC) - A5_Pro-user 9 PPR1.180610.011 1614150788 release-keys
+bin/kpoc_charger
+etc/init/kpoc_charger.rc
+lib/libshowlogo.so

@@ -99,6 +99,11 @@ PRODUCT_PACKAGES += \
 # Shims
 PRODUCT_PACKAGES += \
     libshim_showlogo
+
+# Dependencies of kpoc_charger
+PRODUCT_PACKAGES += \
+    libsuspend \
+    android.hardware.health@2.0    
     
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 28
