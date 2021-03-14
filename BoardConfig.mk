@@ -116,6 +116,10 @@ TARGET_LD_SHIM_LIBS := \
 # Treble
 BOARD_VNDK_VERSION := current
 
+# Board init
+TARGET_INIT_VENDOR_LIB := //$(LOCAL_PATH):libinit_A5_Pro
+TARGET_RECOVERY_DEVICE_MODULES := libinit_A5_Pro
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
