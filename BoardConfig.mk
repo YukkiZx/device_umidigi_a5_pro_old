@@ -117,7 +117,7 @@ TARGET_LD_SHIM_LIBS := \
 BOARD_VNDK_VERSION := current
 
 # Board init
-TARGET_INIT_VENDOR_LIB := //$(LOCAL_PATH):libinit_A5_Pro
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_A5_Pro
 TARGET_RECOVERY_DEVICE_MODULES := libinit_A5_Pro
 
 # Soong namespaces
