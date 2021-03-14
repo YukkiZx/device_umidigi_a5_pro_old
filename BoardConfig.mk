@@ -109,6 +109,10 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USES_PREBUILT_VENDOR_SEPOLICY := true
 TARGET_HAS_FUSEBLK_SEPOLICY_ON_VENDOR := true
 
+# Shims
+TARGET_LD_SHIM_LIBS := \
+    /system/lib/libshowlogo.so|libshim_showlogo.so
+    
 # Treble
 BOARD_VNDK_VERSION := current
 
