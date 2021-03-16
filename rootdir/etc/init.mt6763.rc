@@ -14,6 +14,14 @@ on init
     
     mount none /system/etc/fstab.enableswap /vendor/etc/fstab.enableswap bind
 
+    # Force disable all VoLTE support -- it requires intensive modification of frameworks
+    # without framework support it creates all sorts of problems. Disable it.
+    setprop persist.vendor.mtk.volte.enable 0
+    setprop persist.vendor.mtk_ct_volte_support 0
+
+    # A wretched solution for incoming calls
+    mount none /system/lib64/libmtk-ril.so /vendor/lib64/libmtk-ril.so bind
+
 on fs
     mount_all /vendor/etc/fstab.mt6763 --early
     mount_all /vendor/etc/fstab.mt6763 --late
@@ -26,7 +34,3 @@ on post-fs
     umount /vendor/etc/fstab.mt6763
 
     mount none /system/etc/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind
-
-# Disable AOSP RIL if MTK RIL is up
-on property:vendor.ril.mtk=1
-    stop vendor.ril-daemon
