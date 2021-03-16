@@ -48,13 +48,13 @@ chmod a+x ~/bin/repo
 
 #### ROM:
 
-1. Create a folder for PE sources
+1. Create a folder for crD sources
 ```
-mkdir ~/PixelExperience
+mkdir ~/crDroid
 ```
 2. Go to the folder
 ```
-cd ~/PixelExperience
+cd ~/crDroid
 ```
 3. Login to git
 ```
@@ -63,11 +63,11 @@ git config --global user.name "Your Name"
 ```
 4. Initializing the sources
 ```
-repo init -u https://github.com/PixelExperience/manifest -b eleven
+repo init -u git://github.com/crdroidandroid/android.git -b 11.0
 ```
 5. Sync source
 ```
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+repo sync
 ```
 
 #### Device configuration
