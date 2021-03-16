@@ -17,7 +17,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
 # Inherit from A5 Pro device
 $(call inherit-product, device/umidigi/A5_Pro/device.mk)
-$(call inherit-product, device/umidigi/A5_Pro/mtk-hals.mk)
 
 # Inherit some common PixelExperience stuff.
 #TARGET_USES_AOSP_RECOVERY := true
