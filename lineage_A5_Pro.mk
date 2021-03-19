@@ -18,13 +18,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 # Inherit from A5 Pro device
 $(call inherit-product, device/umidigi/A5_Pro/device.mk)
 
-# Inherit some common PixelExperience stuff.
-#TARGET_USES_AOSP_RECOVERY := true
+# Inherit some common crD stuff.
 TARGET_BOOT_ANIMATION_RES := 1080
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := aosp_A5_Pro
+PRODUCT_NAME := lineage_A5_Pro
 PRODUCT_DEVICE := A5_Pro
 PRODUCT_BRAND := UMIDIGI
 PRODUCT_MODEL := A5_Pro

@@ -5,7 +5,7 @@
 #
 
 PRODUCT_MAKEFILES += \
-    $(LOCAL_DIR)/aosp_A5_Pro.mk
+    $(LOCAL_DIR)/lineage_A5_Pro.mk
 
 COMMON_LUNCH_CHOICES += \
-    aosp_A5_Pro-userdebug
+    lineage_A5_Pro-userdebug
