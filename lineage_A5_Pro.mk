@@ -26,7 +26,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 PRODUCT_NAME := lineage_A5_Pro
 PRODUCT_DEVICE := A5_Pro
 PRODUCT_BRAND := UMIDIGI
-PRODUCT_MODEL := A5_Pro
+PRODUCT_MODEL := A5 Pro
 PRODUCT_MANUFACTURER := UMIDIGI
 
 PRODUCT_GMS_CLIENTID_BASE := android-umidigi
