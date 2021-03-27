@@ -1,4 +1,4 @@
-Copyright (C) 2021 The PixelExperience Project
+Copyright (C) 2021 The LineageOS Project
 
 Device Tree for UMIDIGI A5 Pro (A5_Pro)
 ==========================================
