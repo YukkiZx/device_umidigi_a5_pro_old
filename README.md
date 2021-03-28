@@ -81,6 +81,17 @@ git clone https://github.com/UMIDIGI-MT6763-Development/device_umidigi_a5_pro.gi
 git clone https://github.com/UMIDIGI-MT6763-Development/vendor_umidigi_a5_pro.git vendor/umidigi/A5_Pro
 ```
 
+#### IMS (For the network to work, you need to clone this):
+
+1. Mediatek-ims
+```
+git clone https://github.com/UMIDIGI-MT6763-Development/vendor_mediatek_ims.git vendor/mediatek/ims
+```
+2. Mediatek-interfaces
+```
+git clone https://github.com/PixelExperience/vendor_mediatek_interfaces.git vendor/mediatek/interfaces
+```
+
 #### Build:
 
 1. start building for UMIDIGI A5 Pro
