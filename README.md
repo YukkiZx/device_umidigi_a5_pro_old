@@ -85,7 +85,7 @@ git clone https://github.com/UMIDIGI-MT6763-Development/vendor_umidigi_a5_pro.gi
 
 1. Mediatek-ims
 ```
-git clone https://github.com/UMIDIGI-MT6763-Development/vendor_mediatek_ims.git vendor/mediatek/ims
+git clone https://github.com/PixelExperience/vendor_mediatek_ims.git vendor/mediatek/ims
 ```
 2. Mediatek-interfaces
 ```
