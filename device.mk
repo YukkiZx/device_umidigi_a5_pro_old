@@ -95,13 +95,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-# Tethering
-PRODUCT_PACKAGES += \
-    TetheringConfigOverlay
-
 # WiFi
 PRODUCT_PACKAGES += \
-    WifiOverlay
+    WifiOverlay \
+    TetheringConfigOverlay
 
 # TinyXML
 PRODUCT_PACKAGES += \
