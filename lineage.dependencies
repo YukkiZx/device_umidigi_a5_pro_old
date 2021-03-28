@@ -1,0 +1,17 @@
+[
+  {
+    "repository" : "UMIDIGI-MT6763-Development/vendor_umidigi_a5_pro",
+    "target_path": "vendor/umidigi/A5_Pro",
+    "branch"     : "eleven"
+  },
+  {
+    "repository" : "PixelExperience/vendor_mediatek_interfaces",
+    "target_path": "vendor/mediatek/interfaces",
+    "branch"     : "eleven"
+  },
+  {
+    "repository" : "PixelExperience/vendor_mediatek_ims",
+    "target_path": "vendor/mediatek/ims",
+    "branch"     : "eleven"
+  }
+]
