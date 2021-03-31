@@ -1,1 +1,2 @@
-allow init servicemanager:binder { call transfer };
+# Allow init to change owner of /sys/class/power_supply/usb/*
+allow init sysfs_battery_supply:file { w_file_perms setattr };
