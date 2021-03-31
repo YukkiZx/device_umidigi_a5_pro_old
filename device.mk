@@ -7,12 +7,6 @@
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
-# IMS
-$(call inherit-product, vendor/mediatek/ims/mtk-ims.mk)
-
-# EngineerMode
-$(call inherit-product, vendor/mediatek/ims/mtk-engi.mk)
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
@@ -60,6 +54,16 @@ PRODUCT_PACKAGES += \
 # ImsInit hack
 PRODUCT_PACKAGES += \
     ImsInit
+
+PRODUCT_PACKAGES += \
+    TrebleApp
+
+PRODUCT_COPY_FILES += \
+       $(LOCAL_PATH)/configs/permissions/interfaces.xml:system/etc/permissions/interfaces.xml
+
+# Privapp-permissions whitelist for PhhTrebleApp
+PRODUCT_COPY_FILES += \
+       $(LOCAL_PATH)/configs/permissions/privapp-permissions-me.phh.treble.app.xml:system/etc/permissions/privapp-permissions-me.phh.treble.app.xml
     
 # Init cripts
 PRODUCT_PACKAGES += \
