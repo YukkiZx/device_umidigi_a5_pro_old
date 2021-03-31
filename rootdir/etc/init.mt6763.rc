@@ -21,6 +21,10 @@ on post-fs
     mount none /dev/null vendor/overlay/DisplayCutoutEmulationDouble/DisplayCutoutEmulationDoubleOverlay.apk bind
     mount none /dev/null vendor/overlay/DisplayCutoutEmulationCorner/DisplayCutoutEmulationCornerOverlay.apk bind
     
-    on boot
+on post-fs-data
     # Disable serial console for MTK (A11 notification)
     setprop init.svc.console stopped
+
+# Disable AOSP RIL if MTK RIL is up
+on property:vendor.ril.mtk=1
+    stop vendor.ril-daemon
