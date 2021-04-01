@@ -14,8 +14,6 @@ on init
     
     mount none /system/etc/fstab.enableswap /vendor/etc/fstab.enableswap bind
 
-    mount none /system/etc/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind
-
 on post-fs
     # Disable vendor overlays
     mount none /dev/null vendor/overlay/framework-res__auto_generated_rro.apk bind
