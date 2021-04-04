@@ -12,10 +12,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
     
-# APN
+# APNs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/apns/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
-    	
+    
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.mt6763 \
@@ -38,10 +42,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/usb_audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/audio_effects.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_effects.conf
 
-# Bluetooth
-PRODUCT_PACKAGES += \
-    libldacBT_dec
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2280
 TARGET_SCREEN_WIDTH := 1080
@@ -53,11 +53,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # GMS
 PRODUCT_GMS_CLIENTID_BASE := android-agold
 
-# Features
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.controls.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.controls.xml \
-    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml
-
 # Gestures
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
@@ -67,21 +62,9 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0_system \
     android.hidl.manager@1.0_system \
     libhidltransport \
-    libhwbinder
-
-# ImsInit hack
-PRODUCT_PACKAGES += \
-    ImsInit
-
-PRODUCT_PACKAGES += \
-    TrebleApp
-
-PRODUCT_COPY_FILES += \
-       $(LOCAL_PATH)/configs/permissions/interfaces.xml:system/etc/permissions/interfaces.xml
-
-# Privapp-permissions whitelist for PhhTrebleApp
-PRODUCT_COPY_FILES += \
-       $(LOCAL_PATH)/configs/permissions/privapp-permissions-me.phh.treble.app.xml:system/etc/permissions/privapp-permissions-me.phh.treble.app.xml
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
     
 # Init cripts
 PRODUCT_PACKAGES += \
@@ -108,7 +91,19 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.secure_lock_screen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.secure_lock_screen.xml \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml \
+    frameworks/native/data/etc/android.software.controls.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.controls.xml \
+    frameworks/native/data/etc/android.hardware.ethernet.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.ethernet.xml \
+    frameworks/native/data/etc/android.hardware.faketouch.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.faketouch.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.multitouch.distinct.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.touchscreen.multitouch.xml \
+    frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.usb.host.xml \
+    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.ims.xml \
+    $(LOCAL_PATH)/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml \
+    $(LOCAL_PATH)/permissions/com.mediatek.ims.plugin.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.mediatek.ims.plugin.xml \
+    $(LOCAL_PATH)/permissions/com.mediatek.op.ims.common.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.mediatek.op.ims.common.xml \
         
 # RcsService
 PRODUCT_PACKAGES += \
@@ -120,6 +115,26 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     WifiOverlay \
     TetheringConfigOverlay
+
+# IMS
+PRODUCT_PACKAGES += \
+    mtk-ims \
+    mtk-ims-telephony
+    
+# ImsInit hack
+PRODUCT_PACKAGES += \
+    ImsInit
+
+# TrebleApp (IMS features)
+PRODUCT_PACKAGES += \
+    TrebleApp
+
+PRODUCT_COPY_FILES += \
+       $(LOCAL_PATH)/permissions/interfaces.xml:system/etc/permissions/interfaces.xml
+
+# Privapp-permissions whitelist for PhhTrebleApp
+PRODUCT_COPY_FILES += \
+       $(LOCAL_PATH)/permissions/privapp-permissions-me.phh.treble.app.xml:system/etc/permissions/privapp-permissions-me.phh.treble.app.xml
 
 # Shims
 PRODUCT_PACKAGES += \
