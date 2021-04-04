@@ -12,4 +12,4 @@ lib/libshowlogo.so
 lib/libsysenv_system.so
 
 # RIL (Hex edited) - A5_Pro-user 9 PPR1.180610.011 1614150788 release-keys
-vendor/lib64/libmtk-ril.so:product/vendor_overlay/28/lib64/libmtk-ril.so
+vendor/lib64/libmtk-ril.so:lib64/libmtk-ril.so
