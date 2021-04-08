@@ -23,6 +23,10 @@ on init
     setprop persist.dbg.wfc_avail_ovr 1
     setprop persist.vendor.vilte_support 0    
 
+on fs
+    mount_all /vendor/etc/fstab.mt6763 --early
+    mount_all /vendor/etc/fstab.mt6763 --late
+
 on post-fs
     # Disable vendor overlays
     mount none /dev/null vendor/overlay/framework-res__auto_generated_rro.apk bind
