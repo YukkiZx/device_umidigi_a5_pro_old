@@ -4,11 +4,6 @@ on init
 
     setprop sys.usb.ffs.aio_compat 1
 
-    # Custom overrides that need to happen right on boot
-    # Override vendor fstab
-    # We only need it to be overridden before things are mounted
-    mount none /system/etc/fstab.mt6763 /vendor/etc/fstab.mt6763 bind
-
     # Solution for incoming calls (Hex edited)
     # Pie vendor
     mount none /product/vendor_overlay/28/lib64/libmtk-ril.so /vendor/lib64/libmtk-ril.so bind
@@ -28,6 +23,12 @@ on fs
     mount_all /vendor/etc/fstab.mt6763 --late
 
 on post-fs
+    # Unmount the overridden fstab because the SELinux label is incorrect
+    # and some MTK daemons can crash because of that
+    # (at post-fs, the fstab has already been used to mount the partitions,
+    #  so it is fine to just revert back)
+    umount /vendor/etc/fstab.mt6763
+
     # Disable vendor overlays
     mount none /dev/null vendor/overlay/framework-res__auto_generated_rro.apk bind
     mount none /dev/null vendor/overlay/SysuiDarkTheme/SysuiDarkThemeOverlay.apk bind
