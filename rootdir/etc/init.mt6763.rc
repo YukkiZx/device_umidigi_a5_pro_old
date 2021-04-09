@@ -4,9 +4,8 @@ on init
 
     setprop sys.usb.ffs.aio_compat 1
 
-    # Solution for incoming calls (Hex edited)
-    # Pie vendor
-    mount none /product/vendor_overlay/28/lib64/libmtk-ril.so /vendor/lib64/libmtk-ril.so bind
+    # Solution for incoming calls (Hex edited) (Pie vendor)
+    mount none /system/lib64/libmtk-ril.so /vendor/lib64/libmtk-ril.so bind
 
     # Force disable all VoLTE support -- it requires intensive modification of frameworks
     # without framework support it creates all sorts of problems. Disable it.
