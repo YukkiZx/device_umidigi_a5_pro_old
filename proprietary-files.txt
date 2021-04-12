@@ -6,10 +6,10 @@ lib64/libaptXHD_encoder.so|01379a17d29c1bbc7f6b0325709940ca8cdd7ab8
 lib64/libaptX_encoder.so|fdbca5626fee8607d90bea2a6903eeebf396a7cf
 
 # Kernel Power Off Charging (KPOC) - A5_Pro-user 9 PPR1.180610.011 1614150788 release-keys
-bin/kpoc_charger
-etc/init/kpoc_charger.rc
-lib/libshowlogo.so
-lib/libsysenv_system.so
+bin/kpoc_charger|450c76df380bc680451f7ae05cc3401b
+etc/init/kpoc_charger.rc|4e33cadf4475d3d4b42f2ed652032b9a
+lib/libshowlogo.so|8786deb3116da1fddae7839f611093c5
+lib/libsysenv_system.so|60246ea185e811da907f7410465d67d9
 
 # RIL (Hex edited) - A5_Pro-user 9 PPR1.180610.011 1614150788 release-keys
-vendor/lib64/libmtk-ril.so:lib64/libmtk-ril.so
+vendor/lib64/libmtk-ril.so:lib64/libmtk-ril.so|688234cb10401836f7eb287e18dcb479
