@@ -14,5 +14,6 @@ lib/libsysenv_system.so|60246ea185e811da907f7410465d67d9
 # RIL (Hex edited) - A5_Pro-user 9 PPR1.180610.011 1614150788 release-keys
 vendor/lib64/libmtk-ril.so:lib64/libmtk-ril.so|688234cb10401836f7eb287e18dcb479
 
-# HotwordEnrollment
--product/priv-app/HotwordEnrollmentOKGoogleCORTEXM4/HotwordEnrollmentOKGoogleCORTEXM4.apk|431c87287029ce64484b632263debfeb
+# HotwordEnrollment - Begoniain QP1A.190711.020 V11.0.2.0.QGGINXM
+-product/priv-app/HotwordEnrollmentOKGoogleCORTEXM4/HotwordEnrollmentOKGoogleCORTEXM4.apk|0c16babb78ad3525f5824bfba93e4bc1
+-product/priv-app/HotwordEnrollmentXGoogleCORTEXM4/HotwordEnrollmentXGoogleCORTEXM4.apk|bd606cafb6ccdbffb59412a127a09722
