@@ -43,7 +43,7 @@
          will be searched, and the service with the highest version number will
          be picked. Anyone who wants to disable the overlay mechanism can set it
          to false. -->
-    <bool name="config_enableNetworkLocationOverlay">false</bool>
+    <bool name="config_enableNetworkLocationOverlay">true</bool>
 
     <!-- Whether WiFi display is supported by this device.
          There are many prerequisites for this feature to work correctly.
