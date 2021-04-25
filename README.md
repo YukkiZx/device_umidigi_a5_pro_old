@@ -82,8 +82,12 @@ git clone https://github.com/UMIDIGI-MT6763-Development/vendor_umidigi_a5_pro.gi
 ```
 
 #### Build:
+1. cleaning up build files
+```
+make installclean
+```
 
-1. start building for UMIDIGI A5 Pro
+2. start building for UMIDIGI A5 Pro
 ```
 source build/envsetup.sh
 breakfast A5_Pro
