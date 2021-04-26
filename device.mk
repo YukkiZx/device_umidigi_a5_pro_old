@@ -86,7 +86,6 @@ PRODUCT_COPY_FILES += \
 
 # Pre-opt SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI \
     TrebuchetQuickStep \
     NexusLauncherRelease
 
